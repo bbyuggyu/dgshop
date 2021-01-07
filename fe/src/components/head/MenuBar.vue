@@ -1,9 +1,9 @@
 <template>
-    <v-app-bar
+    <v-toolbar
       color="#FFFFFF"
       dense
       flat
-      height="30"
+      height="50"
     >
       <v-spacer></v-spacer>
       <v-btn @click="$router.push('/shop?q=0')" text>기획상품</v-btn>
@@ -17,7 +17,7 @@
       <v-btn @click="$router.push('/shop?q=8')" text>차류</v-btn>
       <v-btn @click="$router.push('/shop?q=9')" text>세트 상품</v-btn>
       <v-spacer></v-spacer>
-    </v-app-bar>
+    </v-toolbar>
 </template>
 
 <script>

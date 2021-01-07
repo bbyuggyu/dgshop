@@ -1,5 +1,5 @@
 <template>
-    <v-carousel app cycle hide-delimiter-background :show-arrows="false">
+    <v-carousel cycle hide-delimiter-background :show-arrows="false">
         <v-carousel-item
           v-for="(item,i) in imageitems"
           :key="i"
