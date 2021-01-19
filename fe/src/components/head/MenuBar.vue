@@ -1,30 +1,115 @@
+
 <template>
-    <v-toolbar
-      color="#FFFFFF"
-      dense
-      flat
-      height="50"
-    >
-      <v-spacer></v-spacer>
-      <v-btn @click="$router.push('/shop?q=0')" text>기획상품</v-btn>
-      <v-btn @click="$router.push('/shop?q=1')" text>마스크/세정제</v-btn>
-      <v-btn @click="$router.push('/shop?q=2')" text>차포트</v-btn>
-      <v-btn @click="$router.push('/shop?q=3')" text>물병/주전</v-btn>
-      <v-btn @click="$router.push('/shop?q=4')" text>컵/잔</v-btn>
-      <v-btn @click="$router.push('/shop?q=5')" text>텀블러/보틀</v-btn>
-      <v-btn @click="$router.push('/shop?q=6')" text>워머/트레이/보관함</v-btn>
-      <v-btn @click="$router.push('/shop?q=7')" text>플로이</v-btn>
-      <v-btn @click="$router.push('/shop?q=8')" text>차류</v-btn>
-      <v-btn @click="$router.push('/shop?q=9')" text>세트 상품</v-btn>
-      <v-spacer></v-spacer>
-    </v-toolbar>
+  <v-container fluid>
+    <v-row no-gutters>
+     <v-spacer></v-spacer>
+      <v-col
+        v-for="(item, i) in items"
+        :key="i"
+        @click="item.action"
+        cols="12"
+        sm="1"
+      >
+        <v-card
+        tile
+        flat
+        >
+        <!-- <v-card-title>{{item}}</v-card-title> -->
+        <v-btn text x-large max-width>
+            {{item.title}}
+        </v-btn>
+        </v-card>
+      </v-col>
+     <v-spacer></v-spacer>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
   data () {
     return {
+      items: [
+        {
+          title: '아우터',
+          action: this.handleClick
+        },
+        {
+          title: '니트',
+          action: this.handleClick
+        },
+        {
+          title: '가디건',
+          action: this.handleClick
+        },
+        {
+          title: '티셔츠',
+          action: this.handleClick
+        },
+        {
+          title: '셔츠',
+          action: this.handleClick
+        },
+        {
+          title: '팬츠',
+          action: this.handleClick
+        },
+        {
+          title: '신발',
+          action: this.handleClick
+        },
+        {
+          title: '슈트',
+          action: this.handleClick
+        },
+        {
+          title: '트레이닝',
+          action: this.handleClick
+        },
+        {
+          title: '악세사리',
+          action: this.handleClick
+        }
+      ]
+    }
+  },
+  methods: {
+    handleClick (i) {
+      const name = i.target.innerText
+      if (name === '아우터') {
+        return this.$router.push('/shop?q=0')
+      }
+      if (name === '니트') {
+        return this.$router.push('/shop?q=1')
+      }
+      if (name === '가디건') {
+        return this.$router.push('/shop?q=2')
+      }
+      if (name === '티셔츠') {
+        return this.$router.push('/shop?q=3')
+      }
+      if (name === '셔츠') {
+        return this.$router.push('/shop?q=4')
+      }
+      if (name === '팬츠') {
+        return this.$router.push('/shop?q=5')
+      }
+      if (name === '신발') {
+        return this.$router.push('/shop?q=6')
+      }
+      if (name === '슈트') {
+        return this.$router.push('/shop?q=7')
+      }
+      if (name === '트레이닝') {
+        return this.$router.push('/shop?q=8')
+      }
+      if (name === '악세사리') {
+        return this.$router.push('/shop?q=9')
+      }
     }
   }
 }
 </script>
+
+<style scoped>
+</style>

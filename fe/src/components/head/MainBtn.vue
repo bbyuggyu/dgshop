@@ -13,7 +13,7 @@
        height="100%"
        style="font-size:50px"
        @click="$router.push('/')">
-       DG SHOP
+       STYLE SHOP
        </v-btn>
     </v-app-bar>
 </template>

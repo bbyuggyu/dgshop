@@ -6,7 +6,7 @@
     <v-divider></v-divider>
     <menu-bar/>
     <v-divider></v-divider>
-    <main-image/>
+    <main-image v-if="!$route.params.id && !$route.query.q"></main-image>
     <v-main>
       <router-view/>
     </v-main>
