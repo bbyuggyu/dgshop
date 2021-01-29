@@ -27,6 +27,15 @@
 
       <v-divider></v-divider>
 
+      <v-img
+      class="white--text align-end"
+      height="500px"
+      src='https://boom-style.com/SkinImg/img/bottom.jpg'
+      >
+      </v-img>
+
+      <v-divider></v-divider>
+
       <v-card-text align="center" justify="center" class="white--text">
         {{ new Date().getFullYear() }} — <strong>STYLE SHOP</strong>
       </v-card-text>
