@@ -10,6 +10,7 @@
     <v-main>
       <router-view/>
     </v-main>
+    <Footer/>
   </div>
 </template>
 
@@ -18,9 +19,10 @@ import MainBtn from './components/head/MainBtn'
 import NavigationBar from './components/head/NavigationBar'
 import MenuBar from './components/head/MenuBar'
 import MainImage from './components/head/MainImage'
+import Footer from './components/foot/Footer'
 export default {
   name: 'App',
-  components: { NavigationBar, MainBtn, MenuBar, MainImage },
+  components: { NavigationBar, MainBtn, MenuBar, MainImage, Footer },
   data () {
     return {
     }

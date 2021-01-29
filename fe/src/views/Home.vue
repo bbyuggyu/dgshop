@@ -6,9 +6,10 @@
         :key="n"
         cols="12"
         sm="4"
+        class="ma-15"
       >
         <v-card
-          class="pa-2"
+          class="ma-15"
           outlined
           tile
           flat
@@ -30,7 +31,4 @@ export default {
 </script>
 
 <style scoped>
-  .maiImage {
-    width: 100%
-  }
 </style>

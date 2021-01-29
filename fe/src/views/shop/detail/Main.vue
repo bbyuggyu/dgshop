@@ -1,4 +1,5 @@
 <template>
+ <v-app>
   <v-container>
     <v-row fluid>
       <v-col cols="6">
@@ -8,7 +9,7 @@
             <v-img :src="product.image"
                    v-for="i in [1, 2, 3, 4]"
                    :key = "i"
-                   style="width:25%;"
+                   style="width:25%"
             />
           </v-row>
         </v-col>
@@ -25,6 +26,7 @@
             <v-select
                 v-model="selectedCharge"
                 :items="selectCharge"
+                label="필수선택"
                 @change="onSelect"
             ></v-select>
           </v-col>
@@ -37,6 +39,7 @@
             <v-select
                 v-model="selectedOption"
                 :items="selectOptions"
+                label="필수선택"
                 @change="onSelect"
             ></v-select>
           </v-col>
@@ -59,6 +62,12 @@
           <v-spacer></v-spacer>
           <v-col cols="3">{{numberToPrice(product.price * productCount)}}원</v-col>
         </v-row>
+        <v-divider></v-divider>
+        <v-row>
+          <v-col fluid cols="12">
+            <v-btn dense block text>주문하기</v-btn>
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
     <v-row>
@@ -69,6 +78,7 @@
       <v-img :src="product.image" class="ma-3"></v-img>
     </v-row>
   </v-container>
+ </v-app>
 </template>
 
 <script>
@@ -82,7 +92,7 @@ export default {
   data () {
     return {
       isSelected: false,
-      productCount: 0,
+      productCount: 1,
       selectedCharge: '',
       selectedOption: '',
       selectCharge: ['주문시 결제(선결제)', '수령시 결제(착불)'],
@@ -90,27 +100,20 @@ export default {
     }
   },
   methods: {
-    numberToPrice,
-    onSelect,
-    editCount
+    numberToPrice (price) {
+      return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    },
+    onSelect () {
+      if (this.selectedCharge && this.selectedOption) {
+        this.isSelected = true
+      }
+    },
+    editCount (value) {
+      if (!(this.productCount + value < 0)) this.productCount += value
+    }
   }
-}
-
-function numberToPrice (price) {
-  return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-}
-
-function onSelect () {
-  if (this.selectedCharge && this.selectedOption) {
-    this.isSelected = true
-  }
-}
-
-function editCount (value) {
-  if (!(this.productCount + value < 0)) this.productCount += value
 }
 </script>
 
 <style scoped>
-
 </style>
