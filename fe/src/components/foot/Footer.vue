@@ -1,5 +1,7 @@
 <template>
   <v-footer
+    align="center"
+    justify="center"
     padless
   >
     <v-card
@@ -26,14 +28,12 @@
       </v-card-text>
 
       <v-divider></v-divider>
-
       <v-img
-      class="white--text align-end"
+      class="d-flex flex-row-reverse"
       height="500px"
       src='https://boom-style.com/SkinImg/img/bottom.jpg'
       >
       </v-img>
-
       <v-divider></v-divider>
 
       <v-card-text align="center" justify="center" class="white--text">

@@ -1,7 +1,7 @@
 <template>
     <v-app-bar
-      app
       color="#FFFFFF"
+      app
       dense
       flat
       height="30"
@@ -9,6 +9,11 @@
       <v-btn text small>로그인</v-btn>
       <v-btn text small>회원가입</v-btn>
       <v-btn text small>마이패이지▼</v-btn>
+      <v-btn text small>
+        <v-icon left
+        @click="ThemaChange"
+        >mdi-brightness-6</v-icon>
+      </v-btn>
 
       <v-spacer></v-spacer>
       <template v-if="!$vuetify.breakpoint.xs">
@@ -64,6 +69,11 @@ export default {
         { title: 'Click Me' },
         { title: 'Click Me 2' }
       ]
+    }
+  },
+  methods: {
+    ThemaChange () {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     }
   }
 }

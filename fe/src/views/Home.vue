@@ -1,18 +1,20 @@
 <template>
-  <v-container class="grey lighten-5">
+  <v-container
+    align="center"
+    justify="center">
     <v-row no-gutters>
       <v-col
         v-for="n in 6"
         :key="n"
         cols="12"
         sm="4"
-        class="ma-15"
+        class="ma-1"
       >
         <v-card
-          class="ma-15"
           outlined
           tile
           flat
+          class="ma-1"
         >
           One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns One of three columns
         </v-card>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <v-app>
     <navigation-bar/>
     <v-divider></v-divider>
     <main-btn/>
@@ -10,6 +11,7 @@
     <v-main>
       <router-view/>
     </v-main>
+    </v-app>
     <Footer/>
   </div>
 </template>
